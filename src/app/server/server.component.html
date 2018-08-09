@@ -1,0 +1,15 @@
+<div class="container">
+  <hr>
+
+  <label>Username</label>
+  <input #input class="form-control" [(ngModel)]="input.value">
+
+  <p>{{input.value}}</p>
+
+  <button
+    class="btn btn-primary"
+    [disabled]="isEmpty(input.value)"
+    (click)="input.value = ''">
+    OK
+  </button>
+</div>
