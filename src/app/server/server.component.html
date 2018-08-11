@@ -1,15 +1,26 @@
 <div class="container">
   <hr>
 
-  <label>Username</label>
-  <input #input class="form-control" [(ngModel)]="input.value">
+  <!-- <label>Username</label> -->
+  <!-- <input #name class="form-control" [(ngModel)]="username">
 
-  <p>{{input.value}}</p>
+  <p style="margin-top: 1rem;">{{username}}</p>
 
-  <button
-    class="btn btn-primary"
-    [disabled]="isEmpty(input.value)"
-    (click)="input.value = ''">
-    OK
+  <button class="btn btn-primary" [disabled]="isEmpty(username)" (click)="addUser(username)">
+    Add User
   </button>
+  <div class="users">
+    <li *ngFor="let user of users">
+      {{user}}
+    </li>
+  </div>
+  <p *ngIf="users.length > 1; else lessThan1">You have {{ users.length }} users</p>
+  <ng-template #lessThan1>
+    <p>You have {{ users.length }} user</p>
+  </ng-template> -->
+
+  <label>Username</label>
+  <input class="form-control" [(ngModel)]="username" (keypress)="onPress($event)">
+
+  <p id="para" *ngFor="let user of users"></p>
 </div>

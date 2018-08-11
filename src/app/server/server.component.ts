@@ -1,14 +1,15 @@
-  import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-server',
-  templateUrl: './server.component.html',
-  styleUrls: ['./server.component.css']
+  selector: "app-server",
+  templateUrl: "./server.component.html",
+  styleUrls: ["./server.component.css"]
 })
 export class ServerComponent implements OnInit {
-  username:string = '';
+  username: string = "";
+  users = [];
 
-  constructor() { }
+  constructor() {}
 
   isEmpty(input: string): boolean {
     if (input) {
@@ -19,10 +20,13 @@ export class ServerComponent implements OnInit {
   }
 
   clearInput(): void {
-    this.username = '';
+    this.username = "";
   }
 
-  ngOnInit() {
+  addUser(username: string): void {
+    this.users.push(username);
+    this.clearInput();
   }
 
+  ngOnInit() {}
 }
