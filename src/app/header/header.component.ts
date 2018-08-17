@@ -16,16 +16,11 @@ export class HeaderComponent implements OnInit {
   @Output()
   featureSelected = new EventEmitter<string>();
 
-  @ViewChild('check')
-  checkEl: ElementRef;
-
   constructor() {}
 
   onSelect(feature: string): void {
     this.featureSelected.emit(feature);
   }
 
-  ngOnInit() {
-    console.log(this.checkEl.nativeElement);
-  }
+  ngOnInit() {}
 }
